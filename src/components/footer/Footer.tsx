@@ -1,40 +1,7 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 const FooterSection = () => {
-  const [visitorCount, setVisitorCount] = useState<number | null>(null);
-
-  const fetchVisitorCount = async () => {
-    try {
-      const res = await fetch("api/visitor");
-      if (!res.ok) {
-        throw new Error(`API responded with status code: ${res.status}`);
-      }
-      const text = await res.text(); // First, get the response as text
-      try {
-        const data = JSON.parse(text); // Then parse it as JSON
-        setVisitorCount(data.count);
-      } catch (err) {
-        console.error("Failed to parse the response as JSON", text);
-        throw err;
-      }
-    } catch (error) {
-      console.error("Failed to fetch visitor count", error);
-      setVisitorCount(null);
-    }
-  };
-  useEffect(() => {
-    fetchVisitorCount();
-  }, []);
-
-  return (
-    <footer className="flex justify-between mt-8">
-      <p className="text-gray-600">
-        Number of visitors: {visitorCount ?? "Loading..."}
-      </p>
-    </footer>
-  );
+  return <div>FooterSection</div>;
 };
 
 export default FooterSection;
