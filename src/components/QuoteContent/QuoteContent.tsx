@@ -43,25 +43,32 @@ const QuoteContent = () => {
     fetchQuotes();
   };
 
-  // Check if quote is not null before trying to access its properties
+  // Checking if quote is not null before trying to access its properties
   return (
-    <div>
-      QuoteContent
+    <div className="flex flex-col items-center">
+      <h2 className="text-3xl font-bold mb-4">Chuck Norris Quotes</h2>
       {quote && (
-        <div>
-          <Image
-            src="/chuck-norris.png" // Use the icon_url from the fetched quote
-            alt="Chuck Norris"
-            width={250}
-            height={250}
-          />
-          <div key={quote.id}>{quote.value}</div>
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            onClick={handleRefreshQuote}
-          >
-            Refresh Quote
-          </button>
+        <div className="flex justify-center items-center space-x-4 md:space-x-8">
+          <div className="flex-1 text-right">
+            <Image
+              src="/chuck-norris.png"
+              alt="Chuck Norris"
+              width={250}
+              height={250}
+              className="rounded-lg"
+            />
+          </div>
+          <div className="flex-1 text-left">
+            <p key={quote.id} className="text-xl mb-4">
+              {quote.value}
+            </p>
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              onClick={handleRefreshQuote}
+            >
+              Refresh Quote
+            </button>
+          </div>
         </div>
       )}
     </div>
