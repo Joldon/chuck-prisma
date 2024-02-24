@@ -10,7 +10,7 @@ export async function GET() {
     },
     update: {
       count: {
-        increment: 1, // Specify the id explicitly because it's not auto-generated
+        increment: 1, // Specifying the id explicitly because it's not auto-generated
       },
     },
   });

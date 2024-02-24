@@ -1,14 +1,14 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Button from "../button/Button";
 
-// Create the interface for the quote type
+// Creating the interface for the quote type
 interface Quote {
   id: string;
   value: string;
 }
 
-// Define the getQuotes function
 const getQuotes = async (): Promise<Quote> => {
   const res = await fetch(
     "https://api.chucknorris.io/jokes/random?category=dev"
@@ -21,10 +21,10 @@ const getQuotes = async (): Promise<Quote> => {
 };
 
 const QuoteContent = () => {
-  // Use state to store the fetched quotes
+  // Using state to store the fetched quotes
   const [quote, setQuote] = useState<Quote | null>(null);
 
-  // Use effect to fetch quotes when the component mounts
+  // Using effect to fetch quotes when the component mounts
 
   const fetchQuotes = async () => {
     try {
@@ -39,9 +39,9 @@ const QuoteContent = () => {
     fetchQuotes();
   }, []);
 
-  const handleRefreshQuote = () => {
-    fetchQuotes();
-  };
+  //   const handleRefreshQuote = () => {
+  //     fetchQuotes();
+  //   };
 
   // Checking if quote is not null before trying to access its properties
   return (
@@ -62,12 +62,13 @@ const QuoteContent = () => {
             <p key={quote.id} className="text-xl mb-4">
               {quote.value}
             </p>
-            <button
+            {/* <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               onClick={handleRefreshQuote}
             >
               Refresh Quote
-            </button>
+            </button> */}
+            <Button fetchQuotes={fetchQuotes} />
           </div>
         </div>
       )}
