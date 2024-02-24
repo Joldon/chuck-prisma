@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 
 const FooterSection = () => {
   const [visitorCount, setVisitorCount] = useState<number | null>(null);
-
+  // fetching logic for the visitor count
   const fetchVisitorCount = async () => {
     try {
       const res = await fetch("api/visitor");
@@ -29,8 +29,8 @@ const FooterSection = () => {
   }, []);
 
   return (
-    <footer className="flex justify-between mt-8">
-      <p className="text-gray-600">
+    <footer className="flex justify-between mt-8 p-4 bg-gray-700 rounded-t-lg">
+      <p className="text-white-600">
         Number of visitors: {visitorCount ?? "Loading..."}
       </p>
     </footer>

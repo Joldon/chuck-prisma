@@ -4,12 +4,14 @@ import NavbarSection from "@/components/navbar/Navbar";
 
 export default function Home() {
   return (
-    <div>
-      <NavbarSection />
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        <QuoteContent />
-      </main>
-      <FooterSection />
+    <div className="flex flex-col h-screen justify-center items-center">
+      <div className="container max-w-4xl mx-auto px-4 py-8 bg-slate-800 rounded-lg shadow">
+        <NavbarSection />
+        <main className="flex-1 overflow-y-auto px-4 ">
+          <QuoteContent />
+        </main>
+        <FooterSection />
+      </div>
     </div>
   );
 }
