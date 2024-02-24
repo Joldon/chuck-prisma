@@ -3,12 +3,13 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Button from "../button/Button";
 
-// Creating the interface for the quote type
+// the interface for the quote type
 interface Quote {
   id: string;
   value: string;
 }
 
+// getQuotes function to fetch quotes
 const getQuotes = async (): Promise<Quote> => {
   const res = await fetch(
     "https://api.chucknorris.io/jokes/random?category=dev"
@@ -39,11 +40,6 @@ const QuoteContent = () => {
     fetchQuotes();
   }, []);
 
-  //   const handleRefreshQuote = () => {
-  //     fetchQuotes();
-  //   };
-
-  // Checking if quote is not null before trying to access its properties
   return (
     <div className="flex flex-col items-center">
       <h2 className="text-3xl font-bold mb-4">Chuck Norris Quotes</h2>
@@ -62,12 +58,7 @@ const QuoteContent = () => {
             <p key={quote.id} className="text-xl mb-4">
               {quote.value}
             </p>
-            {/* <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-              onClick={handleRefreshQuote}
-            >
-              Refresh Quote
-            </button> */}
+
             <Button fetchQuotes={fetchQuotes} />
           </div>
         </div>

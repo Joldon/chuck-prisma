@@ -1,5 +1,5 @@
 import React from "react";
-
+// this button component provides a button to refresh the quote
 const Button = ({ fetchQuotes }: { fetchQuotes: () => void }) => {
   const handleRefreshQuote = () => {
     fetchQuotes();

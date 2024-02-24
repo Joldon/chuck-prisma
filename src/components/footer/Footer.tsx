@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 
 const FooterSection = () => {
   const [visitorCount, setVisitorCount] = useState<number | null>(null);
-
+  // fetching logic for the visitor count
   const fetchVisitorCount = async () => {
     try {
       const res = await fetch("api/visitor");
