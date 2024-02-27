@@ -1,8 +1,10 @@
 const NavbarSection = () => {
   return (
-    <nav className="relative">
-      <div className="absolute inset-y-0 left-0 flex items-center bg-gray-500 p-4 rounded-r-full">
-        <span className="text-white">W&S</span>
+    <nav className="w-full relative bg-transparent">
+      <div className="flex justify-start">
+        <div className="bg-gray-500 p-4 rounded-r-full">
+          <span className="text-white">W&S</span>
+        </div>
       </div>
     </nav>
   );
