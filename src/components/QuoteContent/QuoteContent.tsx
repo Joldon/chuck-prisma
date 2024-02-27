@@ -42,7 +42,6 @@ const QuoteContent = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <h2 className="text-3xl font-bold mb-4">Chuck Norris Quotes</h2>
       {quote && (
         <div className="flex justify-center items-center space-x-4 md:space-x-8">
           <div className="flex-1 text-right">
@@ -54,7 +53,11 @@ const QuoteContent = () => {
               className="rounded-lg"
             />
           </div>
+
           <div className="flex-1 text-left">
+            <h4 className="text-2xl sm:text-3xl font-bold mb-4">
+              Chuck Quotes
+            </h4>
             <p key={quote.id} className="text-xl mb-4">
               {quote.value}
             </p>
