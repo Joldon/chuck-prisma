@@ -11,6 +11,10 @@ This web application is a fun, engaging platform showcasing a curated list of Ch
 - **Tailwind CSS**: Implemented for its utility-first approach, making it easy to design the app with speed without sacrificing the maintainability of the styles.
 - **Prisma ORM**: Selected for its powerful database toolkit that facilitates data access with an auto-generated query builder for TypeScript & Node.js.
 
+## Deployment and Database
+
+This project is deployed on [Vercel](https://vercel.com), leveraging the platform's seamless integration with Next.js applications for optimal performance and scalability. For data management, it utilizes a PostgreSQL database, providing a robust, relational database solution that supports the app's dynamic content and user interactions.
+
 ## Local Development
 
 1. **Clone the repository**: `git clone https://github.com/Joldon/chuck-prisma.git`
